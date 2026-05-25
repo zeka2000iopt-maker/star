@@ -3,385 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ξ STAR BOT</title>
+<title>STAR BOT</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    background:#cfdcbf;
-    font-family:Arial,sans-serif;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #07101d;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
-.app{
-    width:100%;
-    max-width:510px;
-    margin:35px auto;
-    background:#07101d;
-    overflow:hidden;
-    box-shadow:0 0 30px rgba(0,0,0,.45);
+.app {
+    width: 100%;
+    min-height: 100vh;
+    background: #07101d;
+    color: #eaf2ff;
 }
 
-.header{
-    height:74px;
-    background:#f7f7f7;
-    display:flex;
-    align-items:center;
-    padding:0 22px;
-    color:#1d2530;
-    font-size:21px;
-    font-weight:600;
-}
-
-.header .title{
-    flex:1;
-}
-
-.header .icons{
-    color:#8b8b8b;
-    font-size:30px;
-    letter-spacing:16px;
-}
-
-.content{
-    padding:34px 16px 24px;
-
+.content {
+    min-height: 100vh;
+    padding: 31px 15px 155px;
     background:
-    radial-gradient(circle at center,
-    rgba(0,100,170,.20),
-    transparent 60%),
-    #07101d;
+        radial-gradient(circle at center, rgba(0, 90, 150, 0.18), transparent 62%),
+        #07101d;
 }
 
-.tabs{
-    display:flex;
-    gap:12px;
-    margin-bottom:28px;
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
 }
 
-.tab{
-    width:145px;
-    height:62px;
-    border-radius:18px;
-
-    background:
-    rgba(12,22,42,.96);
-
-    border:1px solid #203556;
-
-    color:white;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:18px;
+.tab {
+    width: 105px;
+    height: 52px;
+    border-radius: 12px;
+    background: #101a2c;
+    border: 1px solid #20314d;
+    color: #dce8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
 }
 
-.tab.active{
-
-    background:
-    linear-gradient(180deg,
-    #07476d,
-    #072b48);
-
-    border:1px solid #0aa5ea;
-
-    box-shadow:
-    inset 0 0 18px rgba(0,170,255,.15);
+.tab.active {
+    background: #073451;
+    border-color: #0e78a9;
+    color: #dff7ff;
 }
 
-.badge{
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    height:42px;
-
-    padding:0 18px;
-
-    border-radius:24px;
-
-    background:
-    linear-gradient(180deg,
-    #07476d,
-    #072b48);
-
-    border:1px solid #0aa5ea;
-
-    color:#72ddff;
-
-    font-size:17px;
-
-    margin-bottom:18px;
+.badge {
+    display: inline-flex;
+    height: 32px;
+    padding: 0 13px;
+    border-radius: 16px;
+    background: #073451;
+    border: 1px solid #0e78a9;
+    color: #78dbff;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
-.card{
-
-    background:
-    radial-gradient(circle at center,
-    rgba(0,90,170,.13),
-    transparent 70%),
-    #0a1322;
-
-    border:1px solid #21324f;
-
-    border-radius:24px;
-
-    padding:24px 18px 22px;
+.card {
+    background: #0d1727;
+    border: 1px solid #22334f;
+    border-radius: 15px;
+    padding: 17px 15px 26px;
 }
 
-.card h2{
-    color:white;
-    font-size:28px;
-    margin-bottom:22px;
+.card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #f4f8ff;
 }
 
-.label{
-    color:#dce6f5;
-    font-size:19px;
-    margin-bottom:10px;
+.label {
+    font-size: 17px;
+    color: #c5d0df;
+    margin-bottom: 8px;
 }
 
-.select{
-
-    height:66px;
-
-    border-radius:17px;
-
-    border:1px solid #2a3f62;
-
-    background:
-    rgba(7,14,27,.96);
-
-    display:flex;
-    align-items:center;
-
-    padding-left:18px;
-
-    color:white;
-
-    font-size:18px;
-
-    margin-bottom:18px;
+.select {
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #2d3e5e;
+    background: #101a2c;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-size: 17px;
+    margin-bottom: 14px;
 }
 
-.hint{
-
-    color:#b5c0cf;
-
-    font-size:18px;
-
-    line-height:1.55;
-
-    margin-bottom:20px;
+.hint {
+    color: #aab5c6;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
 }
 
-.period-title{
-    color:white;
-    font-size:19px;
-    margin-bottom:12px;
+.period-title {
+    color: #c5d0df;
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
-.periods{
-    display:flex;
-    gap:12px;
-    margin-bottom:18px;
+.periods {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
-.period{
-
-    width:66px;
-    height:66px;
-
-    border-radius:50%;
-
-    background:
-    linear-gradient(180deg,
-    #07476d,
-    #072b48);
-
-    border:1px solid #0aa5ea;
-
-    color:white;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:19px;
+.period {
+    height: 37px;
+    padding: 0 14px;
+    border-radius: 20px;
+    background: #073451;
+    border: 1px solid #0e78a9;
+    color: #dff7ff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.period.inactive{
-
-    background:
-    rgba(11,22,41,.96);
-
-    border:1px solid #2b4162;
+.period.inactive {
+    background: #0c2134;
+    color: #c7d4e6;
 }
 
-.button{
-
-    height:70px;
-
-    border-radius:18px;
-
-    background:
-    linear-gradient(180deg,
-    #42cbff,
-    #27b2f3);
-
-    color:#04111e;
-
-    font-size:24px;
-    font-weight:700;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:18px;
+.button {
+    height: 54px;
+    border-radius: 11px;
+    background: #28b9f2;
+    color: #06101c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 12px 0;
 }
 
-.search-box{
-
-    height:66px;
-
-    border-radius:17px;
-
-    border:1px solid #2a3f62;
-
-    background:
-    rgba(8,15,30,.97);
-
-    color:#dce7f5;
-
-    display:flex;
-    align-items:center;
-
-    padding-left:18px;
-
-    font-size:17px;
+.search-box {
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #2d3e5e;
+    background: #101a2c;
+    color: #dce6f6;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-size: 16px;
 }
 
-.footer{
-
-    height:74px;
-
-    background:#f7f7f7;
-
-    color:#6b7787;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:16px;
+@media (min-width: 480px) {
+    .content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
-
 </style>
 </head>
 
 <body>
-
 <div class="app">
-
-    <div class="header">
-
-        <div class="title">
-            Ξ STAR BOT🤖
-        </div>
-
-        <div class="icons">
-            ⋮ ×
-        </div>
-
-    </div>
-
     <div class="content">
 
         <div class="tabs">
-
-            <div class="tab active">
-                채팅순위
-            </div>
-
-            <div class="tab">
-                게임
-            </div>
-
-            <div class="tab">
-                기프티콘
-            </div>
-
+            <div class="tab active">채팅순위</div>
+            <div class="tab">게임</div>
+            <div class="tab">기프티콘</div>
         </div>
 
-        <div class="badge">
-            인증됨 · 크소토트
-        </div>
+        <div class="badge">인증됨 · 크소토트</div>
 
         <div class="card">
+            <h2>채팅순위</h2>
 
-            <h2>
-                채팅순위
-            </h2>
+            <div class="label">채팅방</div>
 
-            <div class="label">
-                채팅방
-            </div>
-
-            <div class="select">
-                채팅방 선택...
-            </div>
+            <div class="select">채팅방 선택...</div>
 
             <div class="hint">
                 기본은 미션택이며, 마지막 선택 채팅방은 자동 복원됩니다.
             </div>
 
-            <div class="period-title">
-                기간
-            </div>
+            <div class="period-title">기간</div>
 
             <div class="periods">
-
-                <div class="period">
-                    1일
-                </div>
-
-                <div class="period inactive">
-                    7일
-                </div>
-
-                <div class="period inactive">
-                    30일
-                </div>
-
+                <div class="period">1일</div>
+                <div class="period inactive">7일</div>
+                <div class="period inactive">30일</div>
             </div>
 
-            <div class="button">
-                순위 불러오기
-            </div>
+            <div class="button">순위 불러오기</div>
 
             <div class="search-box">
                 채팅방 검색 후 목록에서 선택해주세요.
             </div>
-
         </div>
 
     </div>
-
-    <div class="footer">
-        @NFT_Help_Bot
-    </div>
-
 </div>
-
 </body>
-</html>
 </html>
