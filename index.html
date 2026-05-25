@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ξ STAR BOT</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #eaf2ff;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    background: #08111f;
+}
+
+.header {
+    height: 78px;
+    background: white;
+    color: #18212f;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.header .title {
+    flex: 1;
+}
+
+.header .icons {
+    color: #777;
+    font-size: 30px;
+    letter-spacing: 15px;
+}
+
+.content {
+    padding: 30px 18px;
+}
+
+.tabs {
+    display: flex;
+    gap: 11px;
+    margin-bottom: 28px;
+}
+
+.tab {
+    width: 105px;
+    height: 52px;
+    border-radius: 12px;
+    background: #101a2c;
+    border: 1px solid #20314d;
+    color: #dce8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.tab.active {
+    background: #073451;
+    border-color: #0e78a9;
+    color: #dff7ff;
+}
+
+.badge {
+    display: inline-block;
+    background: #073451;
+    border: 1px solid #0e78a9;
+    color: #78dbff;
+    padding: 8px 14px;
+    border-radius: 18px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.card {
+    background: #0d1727;
+    border: 1px solid #22334f;
+    border-radius: 15px;
+    padding: 17px 15px 26px;
+}
+
+.card h2 {
+    margin: 0 0 15px;
+    font-size: 22px;
+}
+
+.label {
+    font-size: 17px;
+    color: #c5d0df;
+    margin-bottom: 8px;
+}
+
+.select {
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #2d3e5e;
+    background: #101a2c;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+.hint {
+    color: #aab5c6;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.period-title {
+    color: #c5d0df;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.periods {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.period {
+    padding: 9px 15px;
+    border-radius: 20px;
+    background: #073451;
+    border: 1px solid #0e78a9;
+    color: #dff7ff;
+    font-size: 16px;
+}
+
+.period.inactive {
+    background: #0c2134;
+    color: #c7d4e6;
+}
+
+.button {
+    height: 54px;
+    border-radius: 11px;
+    background: #28b9f2;
+    color: #06101c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.search-box {
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #2d3e5e;
+    background: #101a2c;
+    color: #dce6f6;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-size: 16px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 52px;
+    background: white;
+    color: #526075;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+    <div class="header">
+        <div class="title">Ξ STAR BOT 🤖</div>
+        <div class="icons">⋮ ×</div>
+    </div>
+
+    <div class="content">
+
+        <div class="tabs">
+            <div class="tab active">채팅순위</div>
+            <div class="tab">게임</div>
+            <div class="tab">기프티콘</div>
+        </div>
+
+        <div class="badge">인증됨 · 크소토트</div>
+
+        <div class="card">
+
+            <h2>채팅순위</h2>
+
+            <div class="label">채팅방</div>
+
+            <div class="select">
+                채팅방 선택...
+            </div>
+
+            <div class="hint">
+                기본은 미션택이며, 마지막 선택 채팅방은 자동 복원됩니다.
+            </div>
+
+            <div class="period-title">
+                기간
+            </div>
+
+            <div class="periods">
+                <div class="period">1일</div>
+                <div class="period inactive">7일</div>
+                <div class="period inactive">30일</div>
+            </div>
+
+            <div class="button">
+                순위 불러오기
+            </div>
+
+            <div class="search-box">
+                채팅방 검색 후 목록에서 선택해주세요.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        @NFT_Help_Bot
+    </div>
+
+</div>
+</body>
+</html>
